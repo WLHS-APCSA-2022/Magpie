@@ -10,6 +10,8 @@
  * @author Laurie White
  * @version April 2012
  */
+
+//test
 public class Magpie2
 {
 	/**
