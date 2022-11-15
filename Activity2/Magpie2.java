@@ -1,3 +1,5 @@
+import java.util.HashMap;
+
 /**
  * A program to carry on conversations with a human user.
  * This is the initial version that:  
@@ -22,7 +24,11 @@ public class Magpie2
 	{
 		return "Hello, let's talk.";
 	}
-	
+
+	public HashMap<String, String> keywordResponses = new HashMap<>();
+	keywordResponses.put("hello", "hello");
+	keywordResponses.put("goodbye", "goodbye");
+
 	/**
 	 * Gives a response to a user statement
 	 * 
@@ -80,5 +86,13 @@ public class Magpie2
 		}
 
 		return response;
+	}
+
+	public int getKeywordCount(String input) {
+		int count = 0;
+		String[] line = input.split(" ");
+		for(int i = 0;i < line.length;i++) {
+			for(String j : )
+		}
 	}
 }
