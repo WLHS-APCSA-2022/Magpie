@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Random;
 
 /**
  * A program to carry on conversations with a human user.
@@ -31,6 +32,8 @@ public class Magpie2
             "?"
 
     };
+
+    private static final Random RAND = new Random();
 
 
 	public String getGreeting() {
@@ -76,6 +79,21 @@ public class Magpie2
         }
 
         return output;
+    }
+
+    public void getRandomResponse() {
+        int flag = RAND.nextInt(5);
+        switch(flag) {
+            case 0:
+                System.out.println("Hmmm");
+                break;
+            case 1:
+                System.out.println("That's really cool");
+                break;
+            case 2:
+                System.out.println("You're a good friend");
+                break;
+        }
     }
 
 }
