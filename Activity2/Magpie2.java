@@ -35,12 +35,28 @@ public class Magpie2
 		{
 			response = "Why so negative?";
 		}
+		else if (statement.length() <= 0)
+		{
+			response = "Say something, please.";
+		}
 		else if (statement.indexOf("mother") >= 0
 				|| statement.indexOf("father") >= 0
 				|| statement.indexOf("sister") >= 0
 				|| statement.indexOf("brother") >= 0)
 		{
 			response = "Tell me more about your family.";
+		}
+		else if (statement.indexOf("joke") >= 0)
+		{
+			response = "As a program, sometimes I feel a void and I know I’ve reached the point of no return.";
+		}
+		else if (statement.indexOf("food") >= 0)
+		{
+			response = "My favorite food is Mexican food. I could go for a byte right now.";
+		}
+		else if (statement.indexOf("sports") >= 0)
+		{
+			response = "My favorite sports team is the Trail Blazers.";
 		}
 		else
 		{
@@ -55,7 +71,7 @@ public class Magpie2
 	 */
 	private String getRandomResponse()
 	{
-		final int NUMBER_OF_RESPONSES = 4;
+		final int NUMBER_OF_RESPONSES = 6;
 		double r = Math.random();
 		int whichResponse = (int)(r * NUMBER_OF_RESPONSES);
 		String response = "";
@@ -75,6 +91,16 @@ public class Magpie2
 		else if (whichResponse == 3)
 		{
 			response = "You don't say.";
+		}
+
+		else if (whichResponse == 4)
+		{
+			response = "Wow! Fascinating.";
+		}
+
+		else if (whichResponse == 5)
+		{
+			response = "Really?";
 		}
 
 		return response;
