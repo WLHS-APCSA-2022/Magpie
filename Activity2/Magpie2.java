@@ -30,7 +30,7 @@ public class Magpie2
 	 */
 	public String getResponse(String statement)
 	{
-		statement = statement + " ";
+		statement += " ";
 		String response = "";
 		if (statement.indexOf("no ") >= 0)
 		{
