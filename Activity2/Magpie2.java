@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.HashMap;
 
 /**
  * A program to carry on conversations with a human user.
@@ -19,7 +18,7 @@ public class Magpie2
 {
 	/**
 	 * Get a default greeting 	
-	 * @return a greeting
+	 *  a greeting
 	 */
 
 	public static final String[] KEYWORDS = new String[] {
@@ -40,15 +39,15 @@ public class Magpie2
 
 	/**
 	 * Gives a response to a user statement
-	 * 
-	 * @param statement
 	 *            the user statement
-	 * @return a response based on the rules given
+	 * a response based on the rules given
 	 */
 
     public void getResponse(String line) {
         ArrayList<String> keywords = findKeyword(line);
-
+            if(keywords.contains("dog")||keywords.contains("cat")){
+                System.out.println("Tell me more about your pets");
+        }
 
 
     }
