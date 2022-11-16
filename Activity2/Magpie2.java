@@ -44,12 +44,25 @@ public class Magpie2
 	 */
 
     public void getResponse(String line) {
-        ArrayList<String> keywords = findKeyword(line);
-            if(keywords.contains("dog")||keywords.contains("cat")){
-                System.out.println("Tell me more about your pets");
+        ArrayList<String> foundKeywords = findKeyword(line);
+            if(foundKeywords.contains(KEYWORDS[0])||foundKeywords.contains(KEYWORDS[1])){
+                System.out.println("Tell me more about your pets.");
         }
-
-
+            else if(foundKeywords.contains(KEYWORDS[2])){
+                System.out.println("He teaches a good class.");
+            }
+            else if(foundKeywords.contains(KEYWORDS[3])){
+                System.out.println("I’m having fun to.");
+            }
+            else if(foundKeywords.contains(KEYWORDS[4])){
+                System.out.println("I like watching cartoons.");
+            }
+            else if(foundKeywords.contains(KEYWORDS[5])){
+                System.out.println("Why are you yelling?");
+            }
+            else if(foundKeywords.contains(KEYWORDS[6])){
+                System.out.println("That's a good question.");
+            }
     }
 
     public ArrayList<String> findKeyword(String line) {
