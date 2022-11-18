@@ -30,10 +30,14 @@ public class Magpie2
 	 */
 	public String getResponse(String statement)
 	{
+		int keyword = 0;
 		statement += " ";
+		statement = statement.toUpperCase();
 		String response = "";
+
 		if (statement.indexOf("no ") >= 0)
 		{
+			keyword++;
 			response = "Why so negative?";
 		}
 		else if (statement.indexOf("mother ") >= 0
@@ -41,14 +45,23 @@ public class Magpie2
 				|| statement.indexOf("sister ") >= 0
 				|| statement.indexOf("brother ") >= 0)
 		{
+			keyword++;
 			response = "Tell me more about your family.";
 		}
 		else if ((statement.indexOf("dog ") >= 0) || (statement.indexOf("cat ") >= 0)){
+			keyword++;
 			response = "Tell me more about your pets";
+		}
+		else if (statement.indexOf("hi ") >= 0){
+			keyword++;
+			response = "Didn't we greet already";
 		}
 		else
 		{
 			response = getRandomResponse();
+		}
+		if (keyword > 1){
+			response = "May you please try to make your sentence a little less complex? im not understanding.";
 		}
 		return response;
 	}
@@ -59,7 +72,7 @@ public class Magpie2
 	 */
 	private String getRandomResponse()
 	{
-		final int NUMBER_OF_RESPONSES = 4;
+		final int NUMBER_OF_RESPONSES = 6;
 		double r = Math.random();
 		int whichResponse = (int)(r * NUMBER_OF_RESPONSES);
 		String response = "";
@@ -79,6 +92,12 @@ public class Magpie2
 		else if (whichResponse == 3)
 		{
 			response = "You don't say.";
+		}
+		else if (whichResponse == 4){
+			response = "What did you say?";
+		}
+		else if (whichResponse == 5){
+			response = "Cool!";
 		}
 
 		return response;
