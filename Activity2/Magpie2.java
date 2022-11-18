@@ -1,7 +1,6 @@
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.regex.Pattern;
-import java.util.regex.Matcher;
 
 /**
  * A program to carry on conversations with a human user.
