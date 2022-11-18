@@ -27,12 +27,11 @@ public class Magpie2
 	public static final String[] KEYWORDS = new String[] {
         "dog",
         "cat",
-        "mr. smith",
+        "mr.smith",
         "fun",
         "cartoons",
-            "!",
-            "?"
-
+        "!",
+        "?"
     };
 
     private static final Random RAND = new Random();
@@ -52,7 +51,7 @@ public class Magpie2
         ArrayList<String> foundKeywords = findKeyword(line);
             if(foundKeywords.contains(KEYWORDS[0])||foundKeywords.contains(KEYWORDS[1])){
                 System.out.println("Tell me more about your pets.");
-        }
+            }
             else if(foundKeywords.contains(KEYWORDS[2])){
                 System.out.println("He teaches a good class.");
             }
@@ -68,6 +67,9 @@ public class Magpie2
             else if(foundKeywords.contains(KEYWORDS[6])){
                 System.out.println("That's a good question.");
             }
+            else{
+                getRandomResponse();
+            }
     }
 
     public ArrayList<String> findKeyword(String line) {
@@ -79,7 +81,6 @@ public class Magpie2
                 }
             }
         }
-
         return output;
     }
 
@@ -90,12 +91,13 @@ public class Magpie2
                 System.out.println("Hmmm");
                 break;
             case 1:
-                System.out.println("That's really cool");
+                System.out.println("That's really cool.");
                 break;
             case 2:
-                System.out.println("You're a good friend");
+                System.out.println("You're a good friend.");
                 break;
+            case 3:
+                System.out.println("Interesting, tell me more.");
         }
     }
-
 }
