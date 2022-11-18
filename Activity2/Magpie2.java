@@ -27,9 +27,7 @@ public class Magpie2
         "cat",
         "mr.smith",
         "fun",
-        "cartoons",
-        "!",
-        "?"
+        "cartoons"
     };
 
     private static final Random RAND = new Random();
@@ -59,11 +57,11 @@ public class Magpie2
             else if(foundKeywords.contains(KEYWORDS[4])){
                 System.out.println("I like watching cartoons.");
             }
-            else if(foundKeywords.contains(KEYWORDS[5])){
+            else if(line.contains("!")){
                 System.out.println("Why are you yelling?");
             }
-            else if(foundKeywords.contains(KEYWORDS[6])){
-                System.out.println("That's a good question.");
+            else if(line.contains("?")){
+                System.out.println("That's a good question. Try asking google.");
             }
             else{
                 getRandomResponse();
