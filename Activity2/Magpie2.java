@@ -1,5 +1,7 @@
 import java.util.ArrayList;
 import java.util.Random;
+import java.util.regex.Pattern;
+import java.util.regex.Matcher;
 
 /**
  * A program to carry on conversations with a human user.
@@ -70,7 +72,7 @@ public class Magpie2
 
     public ArrayList<String> findKeyword(String line) {
         ArrayList<String> output = new ArrayList<>();
-        for(String x : line.split(" ")) {
+        for(String x : line.split(", \\. \" ' ; : ! \\?", Pattern.CASE_INSENSITIVE)) {
             for(String y : KEYWORDS) {
                 if(x.toLowerCase().equals(y)) {
                     output.add(y);
