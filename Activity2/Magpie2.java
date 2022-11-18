@@ -28,7 +28,9 @@ public class Magpie2
         "cat",
         "mr.smith",
         "fun",
-        "cartoons"
+        "cartoons",
+        "dogs",
+        "cats"
     };
 
     private static final Random RAND = new Random();
@@ -46,7 +48,7 @@ public class Magpie2
 
     public void getResponse(String line) {
         ArrayList<String> foundKeywords = findKeyword(line);
-            if(foundKeywords.contains(KEYWORDS[0])||foundKeywords.contains(KEYWORDS[1])){
+            if(foundKeywords.contains(KEYWORDS[0])||foundKeywords.contains(KEYWORDS[1])||foundKeywords.contains(KEYWORDS[5])||foundKeywords.contains(KEYWORDS[6])){
                 System.out.println("Tell me more about your pets.");
             }
             else if(foundKeywords.contains(KEYWORDS[2])){
