@@ -48,11 +48,11 @@ public class Magpie2
 			keyword++;
 			response = "Tell me more about your family.";
 		}
-		else if ((statement.indexOf("dog ") >= 0) || (statement.indexOf("cat ") >= 0)){
+		else if ((statement.indexOf("dog ") >= 0) || (statement.indexOf("cat ") >= 0)){ //Takes users input and sees if it contains phrases "cat" or "dog" then responds
 			keyword++;
 			response = "Tell me more about your pets";
 		}
-		else if (statement.indexOf("hi ") >= 0){
+		else if (statement.indexOf("hi ") >= 0){ //Takes users input and sees if it contains phrase "hi" and responds 
 			keyword++;
 			response = "Didn't we greet already";
 		}
@@ -60,7 +60,7 @@ public class Magpie2
 		{
 			response = getRandomResponse();
 		}
-		if (keyword > 1){
+		if (keyword > 1){ // checks inputs and sees if it hase multiple keywords and asks to dumb down responce
 			response = "May you please try to make your sentence a little less complex? im not understanding.";
 		}
 		return response;
