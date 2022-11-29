@@ -117,6 +117,7 @@ public class Magpie2
                 break;
             case 3:
                 System.out.println("Interesting, tell me more.");
+                break;
         }
     }
 }
