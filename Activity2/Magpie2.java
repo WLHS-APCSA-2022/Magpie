@@ -77,7 +77,7 @@ public class Magpie2
 
     public ArrayList<String> findKeyword(String line) {
         if(line.trim().isEmpty()) {
-            return new ArrayList<String>();
+            return new ArrayList<>();
         }
         ArrayList<String> output = new ArrayList<>();
         for(String x : line.split(", \\. \" ' ; : ! \\?", Pattern.CASE_INSENSITIVE)) {
