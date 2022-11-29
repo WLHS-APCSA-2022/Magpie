@@ -48,6 +48,9 @@ public class Magpie2
 
     public void getResponse(String line) {
         ArrayList<String> foundKeywords = findKeyword(line);
+            if(line.trim().isEmpty()) {
+                System.out.println("Say Something Please!");
+            }
             if(foundKeywords.contains(KEYWORDS[0])||foundKeywords.contains(KEYWORDS[1])||foundKeywords.contains(KEYWORDS[5])||foundKeywords.contains(KEYWORDS[6])){
                 System.out.println("Tell me more about your pets.");
             }
@@ -72,6 +75,9 @@ public class Magpie2
     }
 
     public ArrayList<String> findKeyword(String line) {
+        if(line.trim().isEmpty()) {
+            return null;
+        }
         ArrayList<String> output = new ArrayList<>();
         for(String x : line.split(", \\. \" ' ; : ! \\?", Pattern.CASE_INSENSITIVE)) {
             for(String y : KEYWORDS) {
