@@ -1,6 +1,5 @@
 import java.util.ArrayList;
 import java.util.Random;
-import java.util.regex.Pattern;
 
 /**
  * A program to carry on conversations with a human user.
@@ -48,10 +47,15 @@ public class Magpie2
 
     public void getResponse(String line) {
         ArrayList<String> foundKeywords = findKeyword(line);
+
             if(line.trim().isEmpty()) {
                 System.out.println("Say Something Please!");
                 return;
             }
+        if(foundKeywords.size() >= 2) {
+            getComplexResponse(foundKeywords);
+            return;
+        }
             if(foundKeywords.contains(KEYWORDS[0])||foundKeywords.contains(KEYWORDS[1])||foundKeywords.contains(KEYWORDS[5])||foundKeywords.contains(KEYWORDS[6])){
                 System.out.println("Tell me more about your pets.");
             }
@@ -75,16 +79,25 @@ public class Magpie2
             }
     }
 
+    private void getComplexResponse(ArrayList<String> foundKeywords) {
+
+        if((foundKeywords.contains(KEYWORDS[0])&& foundKeywords.contains(KEYWORDS[1])) || foundKeywords.contains(KEYWORDS[5]) && foundKeywords.contains(KEYWORDS[6] )) {
+            System.out.println("Dogs and Cats are my favorite!");
+        }
+        else if(foundKeywords.contains(KEYWORDS[3]) && foundKeywords.contains(KEYWORDS[4])) {
+            System.out.println("Cartoons are Fun!");
+        }
+
+    }
+
     public ArrayList<String> findKeyword(String line) {
         if(line.trim().isEmpty()) {
             return new ArrayList<>();
         }
         ArrayList<String> output = new ArrayList<>();
-        for(String x : line.split(", \\. \" ' ; : ! \\?", Pattern.CASE_INSENSITIVE)) {
-            for(String y : KEYWORDS) {
-                if(x.toLowerCase().equals(y)) {
-                    output.add(y);
-                }
+        for(String y : KEYWORDS) {
+            if(line.toLowerCase().contains(y)) {
+                output.add(y);
             }
         }
         return output;
