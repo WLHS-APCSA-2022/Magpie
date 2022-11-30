@@ -118,6 +118,10 @@ public class Magpie2
             case 3:
                 System.out.println("Interesting, tell me more.");
                 break;
+		case 4:
+			System.out.println("I don't know what to say");
+			break;
+					   
         }
     }
 }
