@@ -78,6 +78,8 @@ public class Magpie2
                 getRandomResponse();
             }
     }
+	
+	//Generates Responses if keywords are found
 
     private void getComplexResponse(ArrayList<String> foundKeywords) {
 
@@ -89,6 +91,8 @@ public class Magpie2
         }
 
     }
+	
+	//Handles special case for when multiple keywords are found
 
     public ArrayList<String> findKeyword(String line) {
         if(line.trim().isEmpty()) {
@@ -102,6 +106,8 @@ public class Magpie2
         }
         return output;
     }
+	
+	//Finds keywords in the input String
 
     public void getRandomResponse() {
         int flag = RAND.nextInt(5);
@@ -124,4 +130,5 @@ public class Magpie2
 					   
         }
     }
+	//Generates Random Responses when no keywords are found
 }
