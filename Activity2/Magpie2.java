@@ -110,7 +110,7 @@ public class Magpie2
 	//Finds keywords in the input String
 
     public void getRandomResponse() {
-        int flag = RAND.nextInt(5);
+        int flag = RAND.nextInt(8);
         switch(flag) {
             case 0:
                 System.out.println("Hmmm");
@@ -126,6 +126,15 @@ public class Magpie2
                 break;
 		case 4:
 			System.out.println("I don't know what to say");
+			break;
+		case 5:
+			System.out.println("I wonder...");
+			break;
+		case 6:
+			System.out.println("What was that again?");
+			break;
+		case 7:
+			System.out.println("Interesting...");
 			break;
 					   
         }
