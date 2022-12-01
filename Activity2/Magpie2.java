@@ -22,7 +22,7 @@ public class Magpie2
 	 *  a greeting
 	 */
 
-	public static final String[] KEYWORDS = new String[] {
+	private static final String[] KEYWORDS = new String[] {
         "dog",
         "cat",
         "mr.smith",
@@ -94,7 +94,7 @@ public class Magpie2
 	
 	//Handles special case for when multiple keywords are found
 
-    public ArrayList<String> findKeyword(String line) {
+    private ArrayList<String> findKeyword(String line) {
         if(line.trim().isEmpty()) {
             return new ArrayList<>();
         }
@@ -109,7 +109,7 @@ public class Magpie2
 	
 	//Finds keywords in the input String
 
-    public void getRandomResponse() {
+    private void getRandomResponse() {
         int flag = RAND.nextInt(8);
         switch(flag) {
             case 0:
